@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javafx-sdk-16">
+    <CLASSES>
+      <root url="file://$USER_HOME$/Library/Java/JavaVirtualMachines/javafx-sdk-16" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/Library/Java/JavaVirtualMachines/javafx-sdk-16" recursive="false" />
+  </library>
+</component>
