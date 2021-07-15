@@ -101,16 +101,28 @@ public class Publisher {
 
     }
 
-    public static void readAFile() { // will have to work on this, most code is in main
-        String temp;
-        Path myPath = Paths.get("Publisher_data.csv");
+    public static void readCSVFile() {
 
+        ArrayList<String> csvLines = new ArrayList<>();
+        Path filePath = Paths.get("Publisher_data.csv");
 
         try {
-            // need to fill this from main which is below
+            csvLines.addAll(Files.readAllLines(filePath));
+            csvLines.forEach(System.out::println);
+
+            // might have to loop this through csvLines
+            // example of splitting a whole line of data
+            String[] tokens=csvLines.get(2).split(",");// 0 would be id 1 phone 2 name 3 address 4 date
+
+            int pubID = Integer.parseInt(tokens[0]);
+            int pubPhone = Integer.parseInt(tokens[1].trim());
+            String pubName = tokens[2];
+            String pubAddress = tokens[3];
+            String dateCreated = tokens[4];
+            // until here or switch date to String
 
         } catch (Exception e) {
-
+            //Print stack trace
             e.printStackTrace();
         }
 
@@ -174,7 +186,7 @@ public class Publisher {
         ArrayList<String> csvLines = new ArrayList<>();
 
         Path filePath = Paths.get("Publisher_data.csv");
-        //GUESS THIS IS BUGGED Not anymore
+
         try {
             csvLines.addAll(Files.readAllLines(filePath));
             csvLines.forEach(System.out::println);
@@ -185,37 +197,24 @@ public class Publisher {
             //Print stack trace
             e.printStackTrace();
         }
-        System.out.println("\n\n\n");
+
 
         String[] tokens=csvLines.get(2).split(",");// 0 would be id 1 phone 2 name 3 address 4 date
 
-        System.out.println("csvArr index 0 is "+ csvLines.get(0));
-        System.out.println("csvArr index 1 is "+ csvLines.get(1));
-        System.out.println("csvArr index 2 is "+ csvLines.get(2));
-
-        for (String ele : tokens){
-            System.out.println(ele+" ");
-        }
 
         int pubID = Integer.parseInt(tokens[0]);
         int pubPhone = Integer.parseInt(tokens[1].trim()); // space was causing a crash
         String pubName = tokens[2];
         String pubAddress = tokens[3];
         String dateCreated = tokens[4];
-//        Date dateCreated = Date.from(parse(tokens[4])); // doesn't work
 
         System.out.println(pubID);
-        System.out.println(tokens[0]);
-        System.out.println(tokens[4]); // should be date index
+        System.out.println(pubPhone);
+        System.out.println(pubName);
+        System.out.println(pubAddress);
+        System.out.println(dateCreated);
 
-//        Path myPath = Paths.get("Publisher_data.csv");
-//        try {
-//
-//            Files.write(myPath, pub1.toString().getBytes());// ** nuking it
-//
-//        }catch (Exception e){
-//            System.out.println(e);
-//        }
+
 
     }
 
