@@ -22,16 +22,6 @@ public class User {
     private String email;
     private boolean custOrLib;
 
-    ArrayList<User> users = new ArrayList<>();
-
-    User user0 = new User(); // default constructor
-    User user1 = new User(1234,"Password1","Michael Jones","3132 Street",423,7466117,"tewi7@nhmty.com");
-    User user2 = new User(1235,"Password2","Khloe Dolan","111 Street",480,5423835,"teio577@nhmty.com");
-    User user3 = new User(1236,"Password3","Alexia Saunders","111 Street",704,9473928,"ewir577@nhmty.com");
-    User user4 = new User(1237,"Password4","Mae Khan","111 Street",818,7983572,"tewi37@nhmty.com");
-    User user5 = new User(1238,"Password5","Remy Haley","111 Street",903,3020927,"two377@nhmty.com");
-
-
 
     public User(){
         /*userID = Integer.parseInt(null);
@@ -142,9 +132,10 @@ public class User {
         users.add(user3);
         users.add(user4);
         users.add(user5);
+        users.add(user5);
 
         for(User data: users) {
-            out.printf("%d, %s, %s, %s, %d, %d, %s\n", data.getUserID(), data.getPassword(), data.getName(), data.getAddress(), data.getAreaCode(), data.getPhone(), data.getEmail());
+            out.printf("%d,%s,%s,%s,%d,%d,%s\n", data.getUserID(), data.getPassword(), data.getName(), data.getAddress(), data.getAreaCode(), data.getPhone(), data.getEmail());
         }
 
         out.close();
